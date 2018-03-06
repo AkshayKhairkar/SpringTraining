@@ -1,0 +1,5 @@
+#idea-generated
+.idea
+*.iws
+*.iml
+*.ipr
