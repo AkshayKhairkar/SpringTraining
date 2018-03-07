@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="hello" class="com.beans.HelloImpl">
+        <property name="message" value="core spring"></property>
+    </bean>
+    <bean id="customerRepository1" class="com.beans.CustomerRepositoryImpl"></bean>
+    <bean id="customerRepository" class="com.beans.CustomerTestRepositoryImpl"></bean>
+
+
+    <bean id="service" class="com.beans.CustomerServiceImpl" autowire="byName">
+        <!--<constructor-arg ref="test"/>-->
+        <!--<property name="customerRepository" ref="repo"></property>-->
+    </bean>
+    
+    <bean id="application" class="com.app.Application">
+        <constructor-arg ref="service"></constructor-arg>
+    </bean>
+</beans>
